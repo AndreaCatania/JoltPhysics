@@ -687,6 +687,9 @@ void BodyManager::SaveState(StateRecorder &inStream) const
 
 bool BodyManager::RestoreState(StateRecorder &inStream)
 {
+	const StateRecorderFilter *filter = inStream.GetFilter();
+
+	if (filter == nullptr || filter->ShouldSaveBodies())
 	{
 		LockAllBodies();
 
