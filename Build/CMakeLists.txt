@@ -236,8 +236,8 @@ else()
 
 	# Set compiler flags for various configurations
 	if (OVERRIDE_CXX_FLAGS)
-		set(CMAKE_CXX_FLAGS_DEBUG "")
-		set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+		set(CMAKE_CXX_FLAGS_DEBUG "-g -O0")
+		set(CMAKE_CXX_FLAGS_RELEASE "-O2")
 	endif()
 	set(CMAKE_CXX_FLAGS_DISTRIBUTION "${CMAKE_CXX_FLAGS_RELEASE}")
 	set(CMAKE_CXX_FLAGS_RELEASEASAN "-fsanitize=address")
